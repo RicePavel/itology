@@ -1,0 +1,10 @@
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+    {% for message in messages %}
+        <div>{{message.messageText}}</div>
+    {% endfor %}
+    
+{% endblock %}
