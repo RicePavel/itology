@@ -12,26 +12,28 @@ use Symfony\Component\Validator\Constraints as Assert;
 class AddMessageForm {
     
     /**
-     * @ORM\Column(type="text")
      * @Assert\NotBlank()
      * @Assert\Length(max = 4000)
      */
     protected $message_text;
 
     /**
-     * @ORM\Column(type = "string", length=256)
      * @Assert\NotBlank()
      * @Assert\Length(max = 80)
      */
     protected $name;
     
     /**
-     * @ORM\Column(type = "string", length=256)
      * @Assert\NotBlank()
      * @Assert\Email()
      */
     protected $email;
   
+    /**
+     * @Assert\NotBlank()
+     */
+    protected $mathResult;
+    
     public function getMessageText() {
         return $this->message_text;
     }
@@ -55,6 +57,16 @@ class AddMessageForm {
     function setEmail($email) {
         $this->email = $email;
     }
+ 
+    function getMathResult() {
+        return $this->mathResult;
+    }
+
+    function setMathResult($mathResult) {
+        $this->mathResult = $mathResult;
+    }
+
+
     
 }
 

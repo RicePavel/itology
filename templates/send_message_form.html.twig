@@ -3,11 +3,10 @@
 
 {% block body %}
     <h1>Test template</h1>
+    <div>{{error}}</div>
     
     {{form_start(form)}}
     {{form_widget(form)}}
     {{form_end(form)}}
-    
-    {{test}}
     
 {% endblock %}

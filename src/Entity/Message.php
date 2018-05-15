@@ -32,6 +32,16 @@ class Message {
      */
     protected $message_text;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    protected $insert_date;
+
+    /**
+     * @ORM\Column(type="string", length=256)
+     */
+    protected $ip;
+    
     function getMessageId() {
         return $this->message_id;
     }
@@ -54,6 +64,22 @@ class Message {
     
     public function setMessageText($text) {
         $this->message_text = $text;
+    }
+    
+    function getInsertDate() {
+        return $this->insert_date;
+    }
+
+    function setInsertDate($insert_date) {
+        $this->insert_date = $insert_date;
+    }
+
+    function getIp() {
+        return $this->ip;
+    }
+
+    function setIp($ip) {
+        $this->ip = $ip;
     }
     
 }
